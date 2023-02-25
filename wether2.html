@@ -1,0 +1,63 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+Weather
+</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<head>
+<a href="index.php"><img src="ram.jpg"height="800px" width="1600px">rweb</a>
+</header>
+<nav>
+<a href="index.php">home</a>
+<br>
+<a href="login.php">login</a>
+<br>
+<a href="weather.php">signup</a>
+<br>
+<a href="about.html">about</a>
+<br>
+<a href="contact.html">contact-us</a>
+</nav>
+<nav>
+<a href="dashboard.php">click hear to go to your dashboard</a>
+</nav>
+<main>
+<h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to rweather.</h1>
+    <form id="form">
+        <input type="text" id="search" placeholder="Search By Location" autocomplete="on">
+    </form>
+    <div id="main">
+
+    </div>
+</main>
+<hr>
+<footer>
+<p>
+<a href="about.html">about</a>click hear to go to about page
+<br>
+<a href="contact.html">contact-us</a>click hear to go to contact page
+<br>
+this website is developed on 23-02-2023
+</p>
+</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
